@@ -10,6 +10,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         Button metresConvertButton = findViewById(R.id.metresConvert);
         Button kilogramsConvertButton = findViewById(R.id.kilogramConvert);
         Button tempConvertButton = findViewById(R.id.temperatureConvert);
+
+        DecimalFormat df = new DecimalFormat("0.00");
 
         metresConvertButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,12 +47,13 @@ public class MainActivity extends AppCompatActivity {
                 String inputText = userInput.getText().toString();
                 Double inputDouble = Double.parseDouble(inputText);
 
+
                 if (unitSelected.equals("Metres")) {
 
                     MetreConverter metreConverter = new MetreConverter(inputDouble);
-                    outputText1.setText(metreConverter.Centimetre.toString() + "Centimetres" );
-                    outputText2.setText(metreConverter.Foot.toString() + " Foot");
-                    outputText3.setText(metreConverter.Inch.toString() + " Inch");
+                    outputText1.setText(df.format(metreConverter.Centimetre) + "Centimetres" );
+                    outputText2.setText(df.format(metreConverter.Foot) + " Foot");
+                    outputText3.setText(df.format(metreConverter.Inch) + " Inch");
                 }
 
             }
@@ -79,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
                 if (unitSelected.equals("Kilogram")) {
 
                     WeightConverter weightConverter = new WeightConverter(inputDouble);
-                    outputText1.setText(weightConverter.Grams.toString() + " Grams");
-                    outputText2.setText(weightConverter.Ounce.toString() + " Ounce(Oz)");
-                    outputText3.setText(weightConverter.Pound.toString() + " Pound(lb)");
+                    outputText1.setText(df.format(weightConverter.Grams) + " Grams");
+                    outputText2.setText(df.format(weightConverter.Ounce) + " Ounce(Oz)");
+                    outputText3.setText(df.format(weightConverter.Pound) + " Pound(lb)");
                 }
 
             }
@@ -96,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                         .getSelectedItem()
                         .toString();
 
-                if (!unitSelected.equals("Celcius")) {
+                if (!unitSelected.equals("Celsius")) {
                     Toast.makeText(getApplicationContext(), "Please Select Celcius Dropdown", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -112,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
                 if (unitSelected.equals("Celsius")) {
 
                     TemperatureConverter temperatureConverter = new TemperatureConverter(inputDouble);
-                    outputText1.setText(temperatureConverter.Fahrenheit.toString() + " Fahrenheit");
-                    outputText2.setText(temperatureConverter.Kelvin.toString() + " Kelvin");
+                    outputText1.setText(df.format(temperatureConverter.Fahrenheit) + " Fahrenheit");
+                    outputText2.setText(df.format(temperatureConverter.Kelvin) + " Kelvin");
                     outputText3.setText("");
                 }
             }
