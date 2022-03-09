@@ -7,9 +7,9 @@ public class WeightConverter {
     public Double Ounce;
     public Double Pound;
 
-    public WeightConverter(Double metreValue) {
+    public WeightConverter(Double kilogramValue) {
 
-        this.Kilograms = metreValue;
+        this.Kilograms = kilogramValue;
         this.Grams = convertkgToGrams();
         this.Ounce = convertkgToOunce();
         this.Pound = convertkgToPound ();

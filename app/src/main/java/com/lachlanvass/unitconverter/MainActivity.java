@@ -46,9 +46,17 @@ public class MainActivity extends AppCompatActivity {
                 if (unitSelected.equals("Kilogram")) {
 
                     WeightConverter weightConverter = new WeightConverter(inputDouble);
-                    outputText1.setText("Centimetres: " + weightConverter.Grams.toString());
-                    outputText2.setText("Foot: " + weightConverter.Ounce.toString());
-                    outputText3.setText("Inch: " + weightConverter.Pound.toString());
+                    outputText1.setText("Grams: " + weightConverter.Grams.toString());
+                    outputText2.setText("Ounce(Oz): " + weightConverter.Ounce.toString());
+                    outputText3.setText("Pounds: " + weightConverter.Pound.toString());
+                }
+
+                if (unitSelected.equals("Celsius")) {
+
+                    TemperatureConverter temperatureConverter = new TemperatureConverter(inputDouble);
+                    outputText1.setText("Fahrenheit: " + temperatureConverter.Fahrenheit.toString());
+                    outputText2.setText("Kelvin: " + temperatureConverter.Kelvin.toString());
+                    outputText3.setText("");
                 }
 
             }
