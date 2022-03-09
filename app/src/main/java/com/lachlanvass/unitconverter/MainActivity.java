@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,9 +17,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button convertButton = findViewById(R.id.metresConvert);
+        Button metresConvertButton = findViewById(R.id.metresConvert);
+        Button kilogramsConvertButton = findViewById(R.id.kilogramConvert);
+        Button tempConvertButton = findViewById(R.id.temperatureConvert);
 
-        convertButton.setOnClickListener(new View.OnClickListener() {
+        metresConvertButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -26,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
                 String unitSelected = unitSpinner
                         .getSelectedItem()
                         .toString();
+
+                if (!unitSelected.equals("Metres")) {
+                    Toast.makeText(getApplicationContext(), "Please Select Metres Dropdown", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 EditText userInput = findViewById(R.id.userinput);
                 TextView outputText1 = findViewById(R.id.output1);
@@ -43,6 +51,31 @@ public class MainActivity extends AppCompatActivity {
                     outputText3.setText(metreConverter.Inch.toString() + " Inch");
                 }
 
+            }
+        });
+
+        kilogramsConvertButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Spinner unitSpinner = findViewById(R.id.unitSpinner);
+                String unitSelected = unitSpinner
+                        .getSelectedItem()
+                        .toString();
+
+                if (!unitSelected.equals("Kilogram")) {
+                    Toast.makeText(getApplicationContext(), "Please Select Kilogram Dropdown", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                EditText userInput = findViewById(R.id.userinput);
+                TextView outputText1 = findViewById(R.id.output1);
+                TextView outputText2 = findViewById(R.id.output2);
+                TextView outputText3 = findViewById(R.id.output3);
+
+                String inputText = userInput.getText().toString();
+                Double inputDouble = Double.parseDouble(inputText);
+
                 if (unitSelected.equals("Kilogram")) {
 
                     WeightConverter weightConverter = new WeightConverter(inputDouble);
@@ -51,6 +84,31 @@ public class MainActivity extends AppCompatActivity {
                     outputText3.setText(weightConverter.Pound.toString() + " Pound(lb)");
                 }
 
+            }
+        });
+
+        tempConvertButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Spinner unitSpinner = findViewById(R.id.unitSpinner);
+                String unitSelected = unitSpinner
+                        .getSelectedItem()
+                        .toString();
+
+                if (!unitSelected.equals("Celcius")) {
+                    Toast.makeText(getApplicationContext(), "Please Select Celcius Dropdown", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                EditText userInput = findViewById(R.id.userinput);
+                TextView outputText1 = findViewById(R.id.output1);
+                TextView outputText2 = findViewById(R.id.output2);
+                TextView outputText3 = findViewById(R.id.output3);
+
+                String inputText = userInput.getText().toString();
+                Double inputDouble = Double.parseDouble(inputText);
+
                 if (unitSelected.equals("Celsius")) {
 
                     TemperatureConverter temperatureConverter = new TemperatureConverter(inputDouble);
@@ -58,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
                     outputText2.setText(temperatureConverter.Kelvin.toString() + " Kelvin");
                     outputText3.setText("");
                 }
-
             }
         });
 
