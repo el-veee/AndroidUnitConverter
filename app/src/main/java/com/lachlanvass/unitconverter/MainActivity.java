@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                 Double inputDouble = Double.parseDouble(inputText);
 
                 if (unitSelected.equals("Metres")) {
+
                     MetreConverter metreConverter = new MetreConverter(inputDouble);
                     outputText1.setText("Centimetres: " + metreConverter.Centimetre.toString());
                     outputText2.setText("Foot: " + metreConverter.Foot.toString());
