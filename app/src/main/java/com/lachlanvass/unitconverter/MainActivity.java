@@ -43,6 +43,14 @@ public class MainActivity extends AppCompatActivity {
                     outputText3.setText("Inch: " + metreConverter.Inch.toString());
                 }
 
+                if (unitSelected.equals("Kilogram")) {
+
+                    WeightConverter weightConverter = new WeightConverter(inputDouble);
+                    outputText1.setText("Centimetres: " + weightConverter.Grams.toString());
+                    outputText2.setText("Foot: " + weightConverter.Ounce.toString());
+                    outputText3.setText("Inch: " + weightConverter.Pound.toString());
+                }
+
             }
         });
 
