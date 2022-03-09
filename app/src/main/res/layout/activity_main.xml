@@ -81,16 +81,44 @@
         app:layout_constraintVertical_bias="0.32" />
 
     <Button
-        android:id="@+id/convertButton"
+        android:id="@+id/metresConvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
         android:layout_marginBottom="68dp"
-        android:text="@string/ConvertButtonPromot"
+        android:text="@string/MetresConvert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.751"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/output1" />
+        app:layout_constraintTop_toBottomOf="@+id/output1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/kilogramConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:layout_marginBottom="68dp"
+        android:text="@string/kilograms_convert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/output1"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/temperatureConvert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:layout_marginBottom="68dp"
+        android:text="@string/temperature_convert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/output1"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
