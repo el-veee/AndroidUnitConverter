@@ -38,24 +38,24 @@ public class MainActivity extends AppCompatActivity {
                 if (unitSelected.equals("Metres")) {
 
                     MetreConverter metreConverter = new MetreConverter(inputDouble);
-                    outputText1.setText("Centimetres: " + metreConverter.Centimetre.toString());
-                    outputText2.setText("Foot: " + metreConverter.Foot.toString());
-                    outputText3.setText("Inch: " + metreConverter.Inch.toString());
+                    outputText1.setText(metreConverter.Centimetre.toString() + "Centimetres" );
+                    outputText2.setText(metreConverter.Foot.toString() + " Foot");
+                    outputText3.setText(metreConverter.Inch.toString() + " Inch");
                 }
 
                 if (unitSelected.equals("Kilogram")) {
 
                     WeightConverter weightConverter = new WeightConverter(inputDouble);
-                    outputText1.setText("Grams: " + weightConverter.Grams.toString());
-                    outputText2.setText("Ounce(Oz): " + weightConverter.Ounce.toString());
-                    outputText3.setText("Pounds: " + weightConverter.Pound.toString());
+                    outputText1.setText(weightConverter.Grams.toString() + " Grams");
+                    outputText2.setText(weightConverter.Ounce.toString() + " Ounce(Oz)");
+                    outputText3.setText(weightConverter.Pound.toString() + " Pound(lb)");
                 }
 
                 if (unitSelected.equals("Celsius")) {
 
                     TemperatureConverter temperatureConverter = new TemperatureConverter(inputDouble);
-                    outputText1.setText("Fahrenheit: " + temperatureConverter.Fahrenheit.toString());
-                    outputText2.setText("Kelvin: " + temperatureConverter.Kelvin.toString());
+                    outputText1.setText(temperatureConverter.Fahrenheit.toString() + " Fahrenheit");
+                    outputText2.setText(temperatureConverter.Kelvin.toString() + " Kelvin");
                     outputText3.setText("");
                 }
 

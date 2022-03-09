@@ -2,9 +2,9 @@
     <string name="app_name">UnitConverter</string>
     <string name="InputPrompt">Enter Unit</string>
     <string name="ConvertButtonPromot">Convert!</string>
-    <string name="output3">Output3</string>
-    <string name="output2">Output2</string>
-    <string name="output1">Output1</string>
+    <string name="output3" />
+    <string name="output2" />
+    <string name="output1" />
     <string-array name="units">
         <item>Metres</item>
         <item>Celsius</item>
